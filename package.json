@@ -1,5 +1,5 @@
 {
-  "name": "rulemaker-api",
+  "name": "rulemaker-client",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
