@@ -1,14 +1,9 @@
 import React from 'react';
-import { useQuery, gql } from '@apollo/client';
+import { useSubscription, gql } from '@apollo/client';
 import './online_users.css';
 
-const ONLINE_USERS = gql`
-  query GetOnlineUsers {
-    online_users_aggregate {
-      aggregate {
-        count
-      }
-    }
+const ONLINE_USERS_SUBSCRIPTION = gql`
+  subscription MySubscription {
     online_users {
       name
       last_seen
@@ -17,11 +12,8 @@ const ONLINE_USERS = gql`
 `;
 
 const OnlineUsers: React.FC = () => {
-  const { loading, error, data } = useQuery(ONLINE_USERS);
+  const { loading, error, data } = useSubscription(ONLINE_USERS_SUBSCRIPTION);
 
-  console.log(data);
-
-  if (loading) return <p>Loading...</p>;
   if (error) {
     console.error(error);
     return <p>Error :(</p>;
@@ -29,13 +21,17 @@ const OnlineUsers: React.FC = () => {
 
   return (
     <div className={'online-users'}>
-      <h2>Online Users ({data.online_users_aggregate.aggregate.count})</h2>
-      <div>
-        {data.online_users.map((user: { name: string }) => {
-          console.log(user);
-          return <div>{user.name}</div>;
-        })}
-      </div>
+      <h2>Online Users ({!loading && data.online_users.length})</h2>
+      {loading ? (
+        <p>Loading...</p>
+      ) : (
+        <div>
+          {data.online_users.map((user: { name: string }) => {
+            console.log(user);
+            return <div>{user.name}</div>;
+          })}
+        </div>
+      )}
     </div>
   );
 };

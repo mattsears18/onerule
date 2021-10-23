@@ -16,7 +16,7 @@ An open-source platform for making rules.
   - [x] `yarn add @apollo/client graphql`
   - [x] setup apollo w typescript
     - https://www.apollographql.com/docs/react/development-testing/static-typing/
-  - [ ] Connect client to api DB
+  - [x] Connect client to api DB
   - [ ] Setup graphql codeegen
     - [ ] Determine whether to use `apollo-codegen` or `graphql-codegen`
       - `yarn add @graphql-codegen/cli @graphql-codegen/introspection @graphql-codegen/typescript @graphql-codegen/typescript-operations @graphql-codegen/typescript-react-apollo`
