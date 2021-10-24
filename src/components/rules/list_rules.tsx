@@ -22,13 +22,12 @@ const RULES = gql`
   }
 `;
 
-const ListRules: React.FC = (props) => {
+const ListRules: React.FC = () => {
   const { loading, error, data } = useQuery(RULES);
 
   if (loading) return <p>Loading...</p>;
   if (error) {
-    console.error(error);
-    return <p>Error :(</p>;
+    throw error;
   }
 
   return (

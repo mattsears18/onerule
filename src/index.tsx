@@ -1,8 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
 
 import {
   ApolloClient,
@@ -13,6 +11,8 @@ import {
 } from '@apollo/client';
 import { getMainDefinition } from '@apollo/client/utilities';
 import { WebSocketLink } from '@apollo/client/link/ws';
+import reportWebVitals from './reportWebVitals';
+import App from './App';
 
 const httpLink = new HttpLink({
   uri: `http://${process.env.REACT_APP_GRAPHQL_ENDPOINT}`,

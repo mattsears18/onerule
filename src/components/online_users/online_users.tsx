@@ -15,8 +15,7 @@ const OnlineUsers: React.FC = () => {
   const { loading, error, data } = useSubscription(ONLINE_USERS_SUBSCRIPTION);
 
   if (error) {
-    console.error(error);
-    return <p>Error :(</p>;
+    throw error;
   }
 
   return (
@@ -26,9 +25,8 @@ const OnlineUsers: React.FC = () => {
         <p>Loading...</p>
       ) : (
         <div>
-          {data.online_users.map((user: { name: string }) => {
-            console.log(user);
-            return <div>{user.name}</div>;
+          {data.online_users.map((user: { id: string; name: string }) => {
+            return <div key={user.id}>{user.name}</div>;
           })}
         </div>
       )}

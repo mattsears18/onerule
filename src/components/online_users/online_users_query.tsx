@@ -19,21 +19,17 @@ const ONLINE_USERS = gql`
 const OnlineUsersQuery: React.FC = () => {
   const { loading, error, data } = useQuery(ONLINE_USERS);
 
-  console.log(data);
-
   if (loading) return <p>Loading...</p>;
   if (error) {
-    console.error(error);
-    return <p>Error :(</p>;
+    throw error;
   }
 
   return (
     <div className={'online-users-query'}>
       <h2>Online Users ({data.online_users_aggregate.aggregate.count})</h2>
       <div>
-        {data.online_users.map((user: { name: string }) => {
-          console.log(user);
-          return <div>{user.name}</div>;
+        {data.online_users.map((user: { id: string; name: string }) => {
+          return <div key={user.id}>{user.name}</div>;
         })}
       </div>
     </div>

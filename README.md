@@ -17,14 +17,17 @@ An open-source platform for making rules.
   - [x] setup apollo w typescript
     - https://www.apollographql.com/docs/react/development-testing/static-typing/
   - [x] Connect client to api DB
-  - [ ] Setup graphql codeegen
+  - [ ] Setup graphql codegen
     - [ ] Determine whether to use `apollo-codegen` or `graphql-codegen`
       - `yarn add @graphql-codegen/cli @graphql-codegen/introspection @graphql-codegen/typescript @graphql-codegen/typescript-operations @graphql-codegen/typescript-react-apollo`
   - [ ] Config
     - [ ] ESLint
-    - [ ] Prettier
-    - [ ] Codecov
+    - [x] Prettier
+    - [ ] .nvmrc
+      - set build script (github action) to use nvmrc
+    - [ ] Airbnb style guide
     - [ ] Jest
+    - [ ] Codecov
     - [ ] Cypress
   - [ ] Auth0 setup
   - [ ] Pages
