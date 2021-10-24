@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
-import OnlineUsers from './components/online_users';
+import OnlineUsers from './components/online_users/online_users';
+import ListRules from './components/rules/list_rules';
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
         <h2>rulemaker</h2>
       </header>
       <OnlineUsers />
+      <ListRules />
     </div>
   );
 }
