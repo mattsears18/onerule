@@ -39,7 +39,7 @@ const splitLink = split(
     );
   },
   wsLink,
-  httpLink
+  httpLink,
 );
 
 const client = new ApolloClient({
@@ -53,7 +53,7 @@ ReactDOM.render(
       <App />
     </ApolloProvider>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById('root'),
 );
 
 // If you want to start measuring performance in your app, pass a function

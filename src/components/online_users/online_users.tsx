@@ -5,7 +5,8 @@ import './online_users.css';
 const ONLINE_USERS_SUBSCRIPTION = gql`
   subscription MySubscription {
     online_users {
-      name
+      first_name
+      last_name
       last_seen
     }
   }
@@ -25,9 +26,15 @@ const OnlineUsers: React.FC = () => {
         <p>Loading...</p>
       ) : (
         <div>
-          {data.online_users.map((user: { id: string; name: string }) => {
-            return <div key={user.id}>{user.name}</div>;
-          })}
+          {data.online_users.map(
+            (user: { id: string; first_name: string; last_name: string }) => {
+              return (
+                <div key={user.id}>
+                  {user.first_name} {user.last_name}
+                </div>
+              );
+            },
+          )}
         </div>
       )}
     </div>

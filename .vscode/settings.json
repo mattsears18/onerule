@@ -27,7 +27,7 @@
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "editor.renderWhitespace": "boundary",
+  "editor.renderWhitespace": "none",
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },

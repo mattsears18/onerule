@@ -14,9 +14,10 @@ const RULES = gql`
       is_public
       created_at
       updated_at
-      user_creator {
+      creator_user {
         id
-        name
+        first_name
+        last_name
       }
     }
   }
