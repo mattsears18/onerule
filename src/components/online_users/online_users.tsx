@@ -33,7 +33,7 @@ const OnlineUsers: React.FC = () => {
                   {user.first_name} {user.last_name}
                 </div>
               );
-            },
+            }
           )}
         </div>
       )}
