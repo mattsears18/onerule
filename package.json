@@ -20,6 +20,7 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
+    "api": "docker-compose --project-directory ./api --project-name rulemaker up --force-recreate",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
